@@ -32,5 +32,11 @@ public class BuyStepdefs {
     public void total_should_be(double total) {
         assertEquals(total, order.getTotal());
     }
+
+    @Then("{string} มีสต็อคเป็น {int}")
+    public void remain_stock(String name, int quantity) {
+        Product prod = catalog.getProduct(name);
+        assertEquals(prod.getStock(), quantity);
+    }
 }
 
